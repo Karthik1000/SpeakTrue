@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+                background-image: url('https://s.wsj.net/public/resources/images/BN-DG015_SPEAKI_GR_20140613141802.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+
+        }
+        h1 {
+            text-shadow: 2px 2px 5px red;
+            font-size: 40px;
+            }
+    </style>
+    <title>Title</title>
+</head>
+<!-- <img src="https://s.wsj.net/public/resources/images/BN-DG015_SPEAKI_GR_20140613141802.jpg" alt="abc"> -->
+<body>
+    
+<center style="padding-top: 5%;">
+    <h1 style="color: cornsilk;">Tap on the mic to start recording</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="{% url 'generate:record' %}">
+    <img src="https://i.postimg.cc/hPK4Q8Bs/Capture.jpg" height="200px" width="200px">
+    </a>
+    
+</center>
+</body>
+</html>

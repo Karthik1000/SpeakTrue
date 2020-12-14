@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+body{
+  width: 70%;
+  height: 30%;
+  background-image: url('https://www.betranslated.com/wp-content/uploads/2019/09/machine-translation-google.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 60px;
+  margin-left: 40%;
+  margin-top: 20%;
+  opacity: 90%;
+}
+    </style>
+</head>
+<body>
+<!-- <form action="{% url 'generate:translate' %}" id="veryfyotp" method="post">
+    {% csrf_token %}
+    <br> Message: 
+    <input name="message" id="msg" value="{{ msg }}"><br>aaasas
+    <br> Language:
+    <input name="language" id="lang" value="{{ lang }}"><br>
+
+    <input type="submit">
+
+  </form>
+
+<br> -->
+<!-- <h3></h3> -->
+
+<div>
+  <form action="{% url 'generate:translate' %}" id="veryfyotp" method="post">
+    {% csrf_token %}
+    <label for="fname">My Message: </label>
+    <input type="text" id="msg" name="message" value="{{ msg }}" readonly>
+
+    <label for="lname">Language Spoken:</label>
+    <input type="text" id="lang" name="language" value="{{ lang }}">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>

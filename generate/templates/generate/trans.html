@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+      <style>
+        input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  body{
+    width: 70%;
+    height: 30%;
+    background-image: url('https://www.betranslated.com/wp-content/uploads/2019/09/machine-translation-google.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+    
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 60px;
+    margin-left: 40%;
+    margin-top: 20%;
+    opacity: 90%;
+  }
+  p {
+            text-shadow: 2px 2px 5px red;
+            font-size: 27px;
+            text-align: center;
+            }
+      </style>
+  </head>
+  
+
+<body>
+<!-- Text you have spoken translated into english 
+
+<form action="{% url 'generate:text_gen' %}" id="veryfyotp" method="post">
+    {% csrf_token %}
+    <br> Message: 
+    <input name="message" id="msg" value="{{ msg }}"><br>
+    <br> Which language you needed to translate? :
+    <input name="language" id="lang" value=""><br>
+
+
+    <input type="submit">
+
+  </form>
+
+
+<br> -->
+
+
+<div>
+  <p>Text you have spoken translated into english </p>
+  
+  <form action="{% url 'generate:text_gen' %}" id="veryfyotp" method="post">
+    {% csrf_token %}
+    <label for="fname">My Message: </label>
+    <input type="text" id="msg" name="message" value="{{ msg }}" readonly>
+
+    <label for="lname">Which language you needed to translate? :</label>
+    <input type="text" id="lang" name="language" value="">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<!-- <a href="{% url 'generate:text_gen' %}">Next step for text generation </a> -->
+</body>
+</html>

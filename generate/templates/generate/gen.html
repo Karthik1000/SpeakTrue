@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+  
+    background-image: url('https://i.postimg.cc/90899537/text.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+    
+  }
+
+      /* https://i.postimg.cc/90899537/text.jpg */
+      h1 {
+            text-shadow: 2px 2px 5px red;
+            font-size: 40px;
+            }
+    </style>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+<body style="padding-top: 3%;">
+  <center><h1 style="padding-bottom: 3%;">Text generation messages</h1></center>
+<!-- 
+  <form action="{% url 'generate:final' %}"  method="post">
+    {% csrf_token %}
+    
+    <br> Message 1: 
+    <textarea name="final_msg" rows="5" cols="50" value="{{ msg1 }}">{{ msg1 }}</textarea><br>
+
+    <input type="submit" value="I like this one">
+  </form>
+  <form action="{% url 'generate:final' %}"  method="post">
+    {% csrf_token %}
+
+    <br> Message 2:
+    <textarea name="final_msg" rows="5" cols="50" value="{{ msg2 }}">{{ msg2 }}</textarea>
+
+    <input type="submit" value="I like this one">
+  </form>
+  <form action="{% url 'generate:final' %}"  method="post">
+    {% csrf_token %}
+
+    <br> Message 3:
+    <textarea name="final_msg" rows="5" cols="50" value="{{ msg3 }}">{{ msg3 }}</textarea>
+
+    <input type="submit" value="I like this one">
+  </form>
+  <form action="{% url 'generate:record_1' %}"  method="post">
+    {% csrf_token %}
+
+    <br> Message:
+    <textarea name="message" rows="5" cols="50" value="{{ msg4 }}">{{ msg4 }}</textarea>
+
+    <input type="submit" value="Speak again!!">
+  </form>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+<div class="row col-12" style="opacity: 90%;">
+  <div class="card col-5" style="margin-left: 50px;">
+    <!-- <img class="card-img-top" src="https://images.pexels.com/photos/20787/pexels-photo.jpg?cs=srgb&dl=adorable-animal-cat-20787.jpg&fm=jpg" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">Message 1: </h5>
+      <form action="{% url 'generate:final' %}"  method="post">
+        {% csrf_token %}
+        
+        <br> 
+        <textarea name="final_msg" rows="5" cols="70" value="{{ msg1 }}" readonly>{{ msg1 }}</textarea><br>
+        
+        <input type="submit" value="I like this one" class="btn btn-primary" style="margin-left: 80%;">
+      </form>
+    
+    </div>
+  </div>
+
+  <div class="card col-5" style="margin-left: 150px;">
+    <!-- <img class="card-img-top" src="https://images.pexels.com/photos/20787/pexels-photo.jpg?cs=srgb&dl=adorable-animal-cat-20787.jpg&fm=jpg" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">Message 2:</h5>
+      <form action="{% url 'generate:final' %}"  method="post">
+        {% csrf_token %}
+    
+        <br> 
+        <textarea name="final_msg" rows="5" cols="70" value="{{ msg2 }}" readonly>{{ msg2 }}</textarea>
+        <br>
+        <input type="submit" value="I like this one" class="btn btn-primary" style="margin-left: 80%;">
+      </form>
+        </div>
+  </div>
+</div>
+<br><br>
+<div class="row col-12" style="opacity: 90%;">
+  <div class="card col-5" style="margin-left: 50px;">
+    <!-- <img class="card-img-top" src="https://images.pexels.com/photos/20787/pexels-photo.jpg?cs=srgb&dl=adorable-animal-cat-20787.jpg&fm=jpg" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title"> Message 3:</h5>
+      <form action="{% url 'generate:final' %}"  method="post">
+        {% csrf_token %}
+    
+        <br>
+        <textarea name="final_msg" rows="5" cols="70" value="{{ msg3 }}" readonly>{{ msg3 }}</textarea>
+        <br>
+        <input type="submit" value="I like this one" class="btn btn-primary" style="margin-left: 80%;">
+      </form>
+        </div>
+  </div>
+
+  <div class="card col-5" style="margin-left: 150px;">
+    <!-- <img class="card-img-top" src="https://images.pexels.com/photos/20787/pexels-photo.jpg?cs=srgb&dl=adorable-animal-cat-20787.jpg&fm=jpg" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">Message:</h5>
+      <form action="{% url 'generate:record_1' %}"  method="post">
+        {% csrf_token %}
+    
+        <br> 
+        <textarea name="message" rows="5" cols="70" value="{{ msg4 }}" readonly>{{ msg4 }}</textarea>
+        <br>
+        <input type="submit" value="Speak again!!" class="btn btn-primary" style="margin-left: 80%;">
+      </form>
+      <form action="{% url 'generate:final' %}"  method="post">
+        {% csrf_token %}
+    
+        <!-- <br> -->
+        <input type="hidden" name="final_msg" rows="5" cols="50" value="{{ msg4 }}" ></input>
+        <!-- <br> -->
+        <input type="submit" value="I like this one" class="btn btn-primary" style="margin-left: 35%; margin-top: -65px;" >
+      </form>
+    
+        </div>
+  </div>
+</div>
+
+
+</body>
+</html>

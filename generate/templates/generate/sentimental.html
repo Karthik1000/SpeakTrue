@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+      <style>
+        input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  body{
+    width: 70%;
+    height: 30%;
+    background-image: url('https://expertsystem.com/wp-content/uploads/2019/06/Sentiment-analysis-e1566481971615.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  
+    
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  #id1 {
+    
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 60px;
+    margin-left: 10%;
+    margin-top: 20%;
+    opacity: 90%;
+    width: 700px;
+    height: 400px;
+  }
+  p {
+            text-shadow: 2px 2px 5px red;
+            font-size: 27px;
+            text-align: center;
+            }
+      </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Create two equal columns that floats next to each other */
+      .column {
+        float: right;
+        width: 20%;
+        padding: 10px;
+        /*margin-bottom: 20%; */
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      </style>
+  </head>
+<body>
+  <div class="row">
+      <div id="id1">
+        <p> Sentimental page</p>
+      </form>
+      <form action="" method="post">
+        {% csrf_token %}
+
+        <label for="lname">Message :</label>
+        <textarea name="message" rows="5" cols="70" value="{{ msg }}">{{ msg }}</textarea>
+        <br>
+        <label for="lname">Status :</label><br>
+        {% if  status  == "positive" %}
+          <input style="width: 520px;height: 30px;color:green;" name="status" id="stat"  value="{{ status }}"><br>
+        {% elif status == "negative" %}    
+          <input style="width: 520px;height: 30px;color: red" name="status" id="stat"  value="{{ status }}"><br>
+        {% else %}
+          <input style="width: 520px;height: 30px;color: orange" name="status" id="stat"  value="{{ status }}"><br>
+        {% endif %}    
+
+
+        <p> Reached final state..</p>
+        <!-- <input type="submit" value="reached final state"> -->
+      </form>
+    </div>
+    <div class="column" style="margin-top: -35%;">
+    {% if  status  == "positive" %}
+      <img src= "https://images-na.ssl-images-amazon.com/images/I/71ZtQnzOU4L._SL1500_.jpg" style="width: 300px;opacity: 90%;background-color: #f2f2f2;">
+    {% elif status == "negative" %}
+      <img src="https://i.pinimg.com/564x/b0/41/75/b04175fd1ffbefdc02d90136c262a6e3.jpg" style="width: 300px;opacity: 90%;background-color: #f2f2f2;">
+    {% else %}
+      <img src="https://i.pinimg.com/originals/51/20/1e/51201ec176416783700f8369dcbe5245.png" style="width: 300px;opacity: 90%;background-color: #f2f2f2;">
+    {% endif %}
+    </div>
+  </div>
+<br>
+
+</body>
+</html>
