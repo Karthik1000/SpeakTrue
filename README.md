@@ -1,4 +1,4 @@
-# Speech_to_text_generation_with_sentiment_analysis
+# SpeakTrue
 Natural Language Processing Project
 
 Here I have attached my presentation and term paper for this project. You can see those.
